@@ -1,0 +1,40 @@
+.profile-pic{
+    border-radius: 50%;
+    width: 150px;
+}
+
+.profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+}
+
+.profile-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-link{
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+.profile-links{
+    display: flex;
+    justify-content: center;
+}
+
+.name-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .profile-container{
+        flex-direction: column;
+  }
+}

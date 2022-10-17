@@ -1,0 +1,26 @@
+.education{
+    display: flex;
+}
+
+.education-school{
+    width: 30%;
+}
+
+.education-description{
+    width: 70%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .education{
+        flex-direction: column;
+    }
+
+    .education-school{
+        width: 100%
+    }
+
+    .education-description{
+        width: 100%
+    }
+}
