@@ -20,8 +20,23 @@ const App = () => {
   //Experience useState; useEffect
   const [experiences, setExperiences] = useState([]);
   const [schools, setSchools] = useState([]);
-  const [theme, setTheme] = useState("light");
-  const [icon, setIcon] = useState(lightModeIco);
+  const [theme, setTheme] = useState(() => {
+    if (localStorage.getItem("setDarkMode") === null) {
+      return "light";
+    } else {
+      return localStorage.getItem("setDarkMode");
+    }
+  });
+  const [icon, setIcon] = useState(() => {
+    if (
+      localStorage.getItem("setDarkMode") === null ||
+      localStorage.getItem("setDarkMode") === "light"
+    ) {
+      return lightModeIco;
+    } else {
+      return darkModeIco;
+    }
+  });
   const experienceCollectionRef = query(
     collection(db, "experience"),
     orderBy("endDate", "desc")
@@ -31,10 +46,6 @@ const App = () => {
     orderBy("startYear", "desc")
   );
   localStorage.setItem("setDarkMode", theme);
-
-  // if (localStorage.getItem("setDarkMode") === "light") {
-
-  // }
 
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
