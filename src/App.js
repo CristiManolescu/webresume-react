@@ -6,7 +6,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 // import * as Icons from "react-icons/ai";
 import { db } from "./firebase-config";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "@firebase/firestore";
 import Experience from "./Components/Experience";
 import Education from "./Components/Education";
 import AboutMe from "./Components/AboutMe";
@@ -37,6 +37,7 @@ const App = () => {
       return darkModeIco;
     }
   });
+
   const experienceCollectionRef = query(
     collection(db, "experience"),
     orderBy("endDate", "desc")
@@ -45,8 +46,8 @@ const App = () => {
     collection(db, "education"),
     orderBy("startYear", "desc")
   );
-  localStorage.setItem("setDarkMode", theme);
 
+  localStorage.setItem("setDarkMode", theme);
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
     setIcon((curr) => (curr === lightModeIco ? darkModeIco : lightModeIco));
@@ -60,7 +61,6 @@ const App = () => {
   useEffect(() => {
     const getExperience = async () => {
       const data = await getDocs(experienceCollectionRef);
-      console.log(data);
       setExperiences(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
@@ -68,13 +68,6 @@ const App = () => {
       const data = await getDocs(schoolsCollectionRef);
       setSchools(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
-    // window
-    //   .matchMedia("(prefers-color-scheme: dark)")
-    //   .addEventListener("change", (event) => {
-    //     const colorScheme = event.matches ? "dark" : "light";
-    //     setTheme(colorScheme);
-    //   });
-
     getExperience();
     getSchools();
   }, []);
@@ -111,7 +104,7 @@ const App = () => {
               <div className="experience-container">
                 <h3>Work experience</h3>
                 {experiences.map((experience) => (
-                  <Experience experience={experience} />
+                  <Experience key={experience.id} experience={experience} />
                 ))}
               </div>
 
