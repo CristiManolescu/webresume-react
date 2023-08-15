@@ -5,8 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 // import * as Icons from "react-icons/ai";
-import { db } from "./firebase-config";
-import { collection, getDocs, query, orderBy } from "@firebase/firestore";
+import { getDocs } from "@firebase/firestore";
+import {
+  experienceCollectionRef,
+  schoolsCollectionRef,
+} from "./Utils/constants";
 import Experience from "./Components/Experience";
 import Education from "./Components/Education";
 import AboutMe from "./Components/AboutMe";
@@ -20,6 +23,8 @@ const App = () => {
   //Experience useState; useEffect
   const [experiences, setExperiences] = useState([]);
   const [schools, setSchools] = useState([]);
+
+  //Set Light/Dark mode
   const [theme, setTheme] = useState(() => {
     if (localStorage.getItem("setDarkMode") === null) {
       return "light";
@@ -27,6 +32,8 @@ const App = () => {
       return localStorage.getItem("setDarkMode");
     }
   });
+
+  //Set the icon for Light/Dark mode
   const [icon, setIcon] = useState(() => {
     if (
       localStorage.getItem("setDarkMode") === null ||
@@ -38,15 +45,7 @@ const App = () => {
     }
   });
 
-  const experienceCollectionRef = query(
-    collection(db, "experience"),
-    orderBy("endDate", "desc")
-  );
-  const schoolsCollectionRef = query(
-    collection(db, "education"),
-    orderBy("startYear", "desc")
-  );
-
+  //Set the Light/Dark Mode into Cookies
   localStorage.setItem("setDarkMode", theme);
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));

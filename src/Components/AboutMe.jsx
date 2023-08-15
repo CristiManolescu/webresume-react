@@ -6,26 +6,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Typewriter from "typewriter-effect";
 import "./../Style/aboutMe.css";
 import ProfilePic from "./../Images/pictograma.jpg";
+import { fullName, git, linkedIn, email } from "../Utils/constants";
 
 const AboutMe = () => {
-  const name = "Cristian Manolescu";
-  const Git = "https://github.com/CristiManolescu";
-  const LinkedIn = "https://www.linkedin.com/in/cristianmanolescu/";
-  const Email = "mailto:cristianm.manolescu96@gmail.com";
-
   return (
     <div className="about-container">
       <div className="profile-container">
         <div className="profile-pic-container">
-          <img
-            className="profile-pic"
-            src={ProfilePic}
-            alt="Cristian Manolescu"
-          />
+          <img className="profile-pic" src={ProfilePic} alt={fullName} />
         </div>
         <div className="name-link">
           <div className="profile-name">
-            <h4>{name}</h4>
+            <h4>{fullName}</h4>
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
@@ -46,7 +38,7 @@ const AboutMe = () => {
               <Button
                 variant="outline-secondary"
                 className="profile-link"
-                onClick={() => (window.location = Git)}
+                onClick={() => (window.location = git)}
               >
                 <Icons.AiFillGithub />
               </Button>
@@ -58,7 +50,7 @@ const AboutMe = () => {
               <Button
                 variant="outline-secondary"
                 className="profile-link"
-                onClick={() => (window.location = LinkedIn)}
+                onClick={() => (window.location = linkedIn)}
               >
                 <Icons.AiFillLinkedin />
               </Button>
@@ -70,7 +62,7 @@ const AboutMe = () => {
               <Button
                 variant="outline-secondary"
                 className="profile-link"
-                onClick={() => (window.location = Email)}
+                onClick={() => (window.location = email)}
               >
                 <Icons.AiOutlineMail />
               </Button>
