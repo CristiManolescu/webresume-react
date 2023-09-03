@@ -5,6 +5,7 @@ export const experienceCollectionRef = query(
   collection(db, "experience"),
   orderBy("endDate", "desc")
 );
+
 export const schoolsCollectionRef = query(
   collection(db, "education"),
   orderBy("startYear", "desc")

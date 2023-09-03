@@ -1,28 +1,24 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, createContext } from "react";
 import React from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 // import * as Icons from "react-icons/ai";
-import { getDocs } from "@firebase/firestore";
-import {
-  experienceCollectionRef,
-  schoolsCollectionRef,
-} from "./Utils/constants";
 import Experience from "./Components/Experience";
 import Education from "./Components/Education";
 import AboutMe from "./Components/AboutMe";
 import "./Style/mainPage.css";
 import lightModeIco from "./Images/moon.png";
 import darkModeIco from "./Images/sun.png";
+import useExperiences from "./Utils/useExperiences";
+import useSchools from "./Utils/useSchools";
 
 export const ThemeContext = createContext(null);
 
 const App = () => {
-  //Experience useState; useEffect
-  const [experiences, setExperiences] = useState([]);
-  const [schools, setSchools] = useState([]);
+  const experiences = useExperiences();
+  const schools = useSchools();
 
   //Set Light/Dark mode
   const [theme, setTheme] = useState(() => {
@@ -56,20 +52,6 @@ const App = () => {
       localStorage.setItem("setDarkMode", "dark");
     }
   };
-
-  useEffect(() => {
-    const getExperience = async () => {
-      const data = await getDocs(experienceCollectionRef);
-      setExperiences(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
-    const getSchools = async () => {
-      const data = await getDocs(schoolsCollectionRef);
-      setSchools(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getExperience();
-    getSchools();
-  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
