@@ -74,7 +74,11 @@ const App = () => {
                 variant="outline-secondary"
                 onClick={toggleTheme}
               >
-                <img className="darkModeIco" src={icon} alt="Change the mode" />
+                <img
+                  className="darkModeIco"
+                  src={icon}
+                  alt={theme + " mode button"}
+                />
               </Button>
             </OverlayTrigger>
             {/********* End Dark Mode Switch ********/}
