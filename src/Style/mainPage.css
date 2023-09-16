@@ -1,56 +1,58 @@
-.App{
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.App {
+  display: flex;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#light{
-    color: black;
-    background-color: whitesmoke;
-    transition: background-color 0.5s, color 0.5s;
+#light {
+  color: black;
+  background-color: whitesmoke;
+  transition: background-color 0.5s, color 0.5s;
 }
-#light .content{
-    background-color: gainsboro;
-    transition: background-color 0.5s;
-}
-
-#dark{
-    background-color: black;
-    transition: background-color 0.5s;
+#light .content {
+  background-color: gainsboro;
+  transition: background-color 0.5s;
 }
 
-#dark .content{
-    color: white;
-    background-color: #202020;
-    transition: background-color 0.5s, color 0.5s;
+#dark {
+  background-color: black;
+  transition: background-color 0.5s;
 }
 
-.switch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#dark .content {
+  color: white;
+  background-color: #202020;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-.content{
-    background-color: gainsboro;
-    border-radius: 25px;
-    max-width:1500px;
-    margin: 5px 0px 5px 0px;
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
-.experience-container, .education-container{
-    margin: 0px 0px 50px 15px;
+.content {
+  background-color: gainsboro;
+  border-radius: 25px;
+  max-width: 1500px;
+  margin: 5px 0px 5px 0px;
 }
 
-.education-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.experience-container,
+.education-container {
+  margin: 0px 0px 50px 15px;
 }
 
-.darkModeIco{
-    width: 15px;
+.education-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.main-button{
-    border-radius: 50%;
+
+.darkModeIco {
+  width: 15px;
+}
+.main-button {
+  border-radius: 50%;
 }

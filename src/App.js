@@ -61,6 +61,8 @@ const App = () => {
           <AboutMe />
           {/********* Dark Mode Switch ********/}
           <div className="switch">
+            <Button variant="outline-secondary">Home</Button>
+            <Button variant="outline-secondary">Portfolio</Button>
             <OverlayTrigger
               placement="right"
               overlay={
