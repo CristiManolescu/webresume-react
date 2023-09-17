@@ -5,21 +5,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 // import * as Icons from "react-icons/ai";
-import Experience from "./Components/Experience";
-import Education from "./Components/Education";
 import AboutMe from "./Components/AboutMe";
 import "./Style/mainPage.css";
 import lightModeIco from "./Images/moon.png";
 import darkModeIco from "./Images/sun.png";
-import useExperiences from "./Utils/useExperiences";
-import useSchools from "./Utils/useSchools";
+import { Outlet, Link } from "react-router-dom";
 
 export const ThemeContext = createContext(null);
 
 const App = () => {
-  const experiences = useExperiences();
-  const schools = useSchools();
-
   //Set Light/Dark mode
   const [theme, setTheme] = useState(() => {
     if (localStorage.getItem("setDarkMode") === null) {
@@ -61,8 +55,13 @@ const App = () => {
           <AboutMe />
           {/********* Dark Mode Switch ********/}
           <div className="switch">
-            <Button variant="outline-secondary">Home</Button>
-            <Button variant="outline-secondary">Portfolio</Button>
+            <Link to="/">
+              <Button variant="outline-secondary">Home</Button>
+            </Link>
+            <Link to="/portfolio">
+              {" "}
+              <Button variant="outline-secondary">Portfolio</Button>
+            </Link>
             <OverlayTrigger
               placement="right"
               overlay={
@@ -85,24 +84,7 @@ const App = () => {
             </OverlayTrigger>
             {/********* End Dark Mode Switch ********/}
           </div>
-          {
-            <>
-              {/********** Content **********/}
-              <div className="experience-container">
-                <h3>Work experience</h3>
-                {experiences.map((experience) => (
-                  <Experience key={experience.id} experience={experience} />
-                ))}
-              </div>
-
-              <div className="education-container">
-                <h3>Education</h3>
-                {schools.map((school) => (
-                  <Education school={school} />
-                ))}
-              </div>
-            </>
-          }
+          <Outlet />
         </div>
       </div>
     </ThemeContext.Provider>
