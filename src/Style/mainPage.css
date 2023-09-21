@@ -1,7 +1,7 @@
 .App {
   display: flex;
   justify-content: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #light {
@@ -35,7 +35,7 @@
 .content {
   background-color: gainsboro;
   border-radius: 25px;
-  max-width: 1500px;
+  max-width: 50%;
   margin: 5px 0px 5px 0px;
 }
 
@@ -55,4 +55,8 @@
 }
 .main-button {
   border-radius: 50%;
+}
+
+.heading {
+  color: lightcoral;
 }

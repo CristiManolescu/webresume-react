@@ -1,26 +1,26 @@
-.education{
-    display: flex;
+.education {
+  display: flex;
+  padding-bottom: 32px;
 }
 
-.education-school{
-    width: 30%;
+.education-school {
+  width: 30%;
 }
 
-.education-description{
-    width: 70%;
+.education-description {
+  width: 70%;
 }
-
 
 @media screen and (max-width: 600px) {
-    .education{
-        flex-direction: column;
-    }
+  .education {
+    flex-direction: column;
+  }
 
-    .education-school{
-        width: 100%
-    }
+  .education-school {
+    width: 100%;
+  }
 
-    .education-description{
-        width: 100%
-    }
+  .education-description {
+    width: 100%;
+  }
 }

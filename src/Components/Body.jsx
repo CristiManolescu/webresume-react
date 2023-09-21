@@ -15,16 +15,16 @@ const Body = () => {
     <div>
       {/********** Content **********/}
       <div className="experience-container">
-        <h3>Work experience</h3>
+        <h3 className="heading">Work experience</h3>
         {experiences.map((experience) => (
           <Experience key={experience.id} experience={experience} />
         ))}
       </div>
 
       <div className="education-container">
-        <h3>Education</h3>
+        <h3 className="heading">Education</h3>
         {schools.map((school) => (
-          <Education school={school} />
+          <Education key={school.id} school={school} />
         ))}
       </div>
     </div>

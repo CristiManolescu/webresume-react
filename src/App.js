@@ -10,6 +10,7 @@ import "./Style/mainPage.css";
 import lightModeIco from "./Images/moon.png";
 import darkModeIco from "./Images/sun.png";
 import { Outlet, Link } from "react-router-dom";
+import Footer from "./Components/Footer";
 
 export const ThemeContext = createContext(null);
 
@@ -59,7 +60,6 @@ const App = () => {
               <Button variant="outline-secondary">Home</Button>
             </Link>
             <Link to="/portfolio">
-              {" "}
               <Button variant="outline-secondary">Portfolio</Button>
             </Link>
             <OverlayTrigger
@@ -85,6 +85,7 @@ const App = () => {
             {/********* End Dark Mode Switch ********/}
           </div>
           <Outlet />
+          <Footer />
         </div>
       </div>
     </ThemeContext.Provider>

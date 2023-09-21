@@ -1,27 +1,28 @@
-.experience{
-    display: flex;
-    flex-direction: center;
-    width: 100%
+.experience {
+  display: flex;
+  flex-direction: center;
+  width: 100%;
+  padding-bottom: 32px;
 }
 
-.experience-company{
-    width: 30%;
+.experience-company {
+  width: 30%;
 }
 
-.experience-position{
-    width: 70%;
+.experience-position {
+  width: 70%;
 }
 
 @media screen and (max-width: 600px) {
-    .experience{
-        flex-direction: column;
-    }
+  .experience {
+    flex-direction: column;
+  }
 
-    .experience-company{
-        width: 100%
-    }
+  .experience-company {
+    width: 100%;
+  }
 
-    .experience-position{
-        width: 100%
-    }
+  .experience-position {
+    width: 100%;
+  }
 }
