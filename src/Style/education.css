@@ -28,3 +28,12 @@
 .school-heading {
   font-size: large;
 }
+
+.school-logo {
+  width: 48px;
+}
+
+.education-main {
+  display: flex;
+  gap: 10px;
+}

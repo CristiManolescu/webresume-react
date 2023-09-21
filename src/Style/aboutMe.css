@@ -5,6 +5,10 @@
   border-color: lightcoral;
 }
 
+.profile-pic:hover {
+  border: none;
+}
+
 .profile-container {
   display: flex;
   justify-content: center;

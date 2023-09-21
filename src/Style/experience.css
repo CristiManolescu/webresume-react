@@ -34,3 +34,12 @@
 .description-points {
   font-size: small;
 }
+
+.experience-main {
+  display: flex;
+  gap: 10px;
+}
+
+.work-logo {
+  width: 48px;
+}

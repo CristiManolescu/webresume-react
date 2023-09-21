@@ -1,7 +1,7 @@
 import "./../Style/experience.css";
 
 const Experience = ({ experience }) => {
-  const { description, name, startDate, endDate, position } = experience;
+  const { description, name, startDate, endDate, position, image } = experience;
 
   let experienceNoLine = description;
   let experienceNewLine = experienceNoLine.split("!").map((exp) => (
@@ -13,10 +13,17 @@ const Experience = ({ experience }) => {
   return (
     <div className="experience">
       <div className="experience-company">
-        <h5 className="work-heading">{name}</h5>
-        <p className="description-points">
-          {startDate} - {endDate}{" "}
-        </p>
+        <div className="experience-main">
+          <div>
+            <img src={image} className="work-logo" alt="logo" />
+          </div>
+          <div>
+            <h5 className="work-heading">{name}</h5>
+            <p className="description-points">
+              {startDate} - {endDate}{" "}
+            </p>
+          </div>
+        </div>
       </div>
       <div className="experience-position">
         <h5 className="work-heading">{position}</h5>
