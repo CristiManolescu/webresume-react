@@ -26,3 +26,11 @@
     width: 100%;
   }
 }
+
+.work-heading {
+  font-size: large;
+}
+
+.description-points {
+  font-size: small;
+}
