@@ -12,7 +12,7 @@ const Body = () => {
   const schools = useSchools();
 
   return (
-    <div>
+    <div className="body">
       {/********** Content **********/}
       <div className="experience-container">
         <h3 className="heading">Experience</h3>

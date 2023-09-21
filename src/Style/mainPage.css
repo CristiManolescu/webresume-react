@@ -60,3 +60,7 @@
 .heading {
   color: lightcoral;
 }
+
+.body {
+  padding: 0px 50px 0px 50px;
+}
