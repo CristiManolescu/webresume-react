@@ -1,7 +1,9 @@
 import "./../Style/experience.css";
 
 const Experience = ({ experience }) => {
-  let experienceNoLine = experience.description;
+  const { description, name, startDate, endDate, position } = experience;
+
+  let experienceNoLine = description;
   let experienceNewLine = experienceNoLine.split("!").map((exp) => (
     <ul className="description-points">
       <li> {exp}</li>
@@ -11,13 +13,13 @@ const Experience = ({ experience }) => {
   return (
     <div className="experience">
       <div className="experience-company">
-        <h5 className="work-heading">{experience.name}</h5>
+        <h5 className="work-heading">{name}</h5>
         <p className="description-points">
-          {experience.startDate} - {experience.endDate}{" "}
+          {startDate} - {endDate}{" "}
         </p>
       </div>
       <div className="experience-position">
-        <h5 className="work-heading">{experience.position}</h5>
+        <h5 className="work-heading">{position}</h5>
         {experienceNewLine}
       </div>
     </div>

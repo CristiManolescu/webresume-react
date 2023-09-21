@@ -1,7 +1,9 @@
 import "./../Style/education.css";
 
 const Education = ({ school }) => {
-  let schoolNoLine = school.description;
+  const { description, degree, startYear, endYear, name } = school;
+
+  let schoolNoLine = description;
   let schoolNewLine = schoolNoLine.split("!").map((schoolDesc) => (
     <ul className="description-points">
       <li> {schoolDesc}</li>
@@ -11,13 +13,13 @@ const Education = ({ school }) => {
   return (
     <div className="education">
       <div className="education-school">
-        <h5 className="school-heading">{school.degree}</h5>
+        <h5 className="school-heading">{degree}</h5>
         <p className="description-points">
-          {school.startYear} - {school.endYear}
+          {startYear} - {endYear}
         </p>
       </div>
       <div className="education-description">
-        <h5 className="school-heading">{school.school}</h5>
+        <h5 className="school-heading">{name}</h5>
         {schoolNewLine}
       </div>
     </div>
