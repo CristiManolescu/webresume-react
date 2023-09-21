@@ -1,7 +1,6 @@
 import "./../Style/education.css";
 
 const Education = ({ school }) => {
-  console.log(school);
   let schoolNoLine = school.description;
   let schoolNewLine = schoolNoLine.split("!").map((schoolDesc) => (
     <ul>

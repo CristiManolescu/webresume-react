@@ -1,7 +1,6 @@
 import "./../Style/experience.css";
 
 const Experience = ({ experience }) => {
-  console.log(experience);
   let experienceNoLine = experience.description;
   let experienceNewLine = experienceNoLine.split("!").map((exp) => (
     <ul>
